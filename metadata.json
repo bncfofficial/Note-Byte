@@ -1,0 +1,5 @@
+{
+  "name": "Note Byte",
+  "description": "A modern, aesthetic note-taking application with reminders, pinning, and color-coding.",
+  "requestFramePermissions": ["notifications"]
+}

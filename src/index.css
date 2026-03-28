@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  
+  /* iOS-like Brand Color */
+  --color-brand-500: #007AFF;
+  --color-brand-600: #0062CC;
+}
+
+/* Support for .dark class in Tailwind v4 */
+@variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg-app: #F2F2F7;
+  --bg-card: #FFFFFF;
+  --text-main: #000000;
+  --text-muted: #8E8E93;
+  --border-subtle: #C6C6C8;
+  --accent: #007AFF;
+  --ios-blur: blur(20px);
+}
+
+.dark {
+  --bg-app: #000000;
+  --bg-card: #1C1C1E;
+  --text-main: #FFFFFF;
+  --text-muted: #8E8E93;
+  --border-subtle: #38383A;
+  --accent: #0A84FF;
+}
+
+body {
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS-style glass effect */
+.glass {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: var(--ios-blur);
+  -webkit-backdrop-filter: var(--ios-blur);
+}
+
+.dark .glass {
+  background-color: rgba(28, 28, 30, 0.7);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+}
